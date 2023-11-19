@@ -38,7 +38,7 @@ fun LandingScreen(onTimeout: () -> Unit, modifier: Modifier = Modifier) {
         // TODO: Make LandingScreen disappear after loading data
         val currentOnTimeout by rememberUpdatedState(onTimeout)
 
-        LaunchedEffect(onTimeout) {
+        LaunchedEffect(Unit) {
             delay(SplashWaitTime) // Simulates loading things
             currentOnTimeout()
         }
