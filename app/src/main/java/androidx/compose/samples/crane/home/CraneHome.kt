@@ -65,7 +65,7 @@ fun CraneHome(
             onExploreItemClicked = onExploreItemClicked,
             openDrawer = {
                 // TODO Codelab: rememberCoroutineScope step - open the navigation drawer
-                // scaffoldState.drawerState.open()
+                 scaffoldState.drawerState.open()
             }
         )
     }
