@@ -60,3 +60,8 @@ fun CraneEditableUserInput(
         )
     }
 }
+@Composable
+fun rememberEditableUserInputState(hint: String): EditableUserInputState =
+    remember(hint) {
+        EditableUserInputState(hint, hint)
+    }
