@@ -7,6 +7,10 @@ import androidx.compose.runtime.saveable.listSaver
 import androidx.compose.runtime.setValue
 
 class EditableUserInputState(private val hint: String, initialText: String) {
+    fun updateText(it: String) {
+        TODO("Not yet implemented")
+    }
+
     var text by mutableStateOf(initialText)
 
     val isHint: Boolean
