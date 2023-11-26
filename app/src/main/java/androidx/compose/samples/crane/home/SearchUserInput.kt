@@ -26,7 +26,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.samples.crane.R
@@ -42,7 +42,7 @@ import androidx.compose.ui.tooling.preview.Preview
 enum class PeopleUserInputAnimationState { Valid, Invalid }
 
 class PeopleUserInputState {
-    var people by mutableStateOf(1)
+    var people by mutableIntStateOf(1)
         private set
 
     val animationState: MutableTransitionState<PeopleUserInputAnimationState> =
