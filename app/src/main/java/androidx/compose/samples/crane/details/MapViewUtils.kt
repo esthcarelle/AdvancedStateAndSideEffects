@@ -33,11 +33,9 @@ import com.google.android.libraries.maps.MapView
 @Composable
 fun rememberMapViewWithLifecycle(): MapView {
     val context = LocalContext.current
-    // TODO Codelab: DisposableEffect step. Make MapView follow the lifecycle
-    return remember {
+    val mapView = remember {
         MapView(context).apply {
             id = R.id.map
-            onCreate(Bundle())
         }
     }
 }
@@ -62,3 +60,5 @@ fun GoogleMap.setZoom(
     setMinZoomPreference(zoom)
     setMaxZoomPreference(zoom)
 }
+
+
