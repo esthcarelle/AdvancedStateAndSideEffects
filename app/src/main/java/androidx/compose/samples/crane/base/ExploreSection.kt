@@ -82,28 +82,31 @@ fun ExploreSection(
             Spacer(Modifier.height(8.dp))
             // TODO Codelab: derivedStateOf step
             // TODO: Show "Scroll to top" button when the first item of the list is not visible
-            val listState = rememberLazyListState()
-            ExploreList(exploreList, onItemClicked, listState = listState)
-            val showButton by remember {
-                derivedStateOf {
-                    listState.firstVisibleItemIndex > 0
-                }
-            }
-            if (showButton) {
-                val coroutineScope = rememberCoroutineScope()
-                FloatingActionButton(
-                    backgroundColor = MaterialTheme.colors.primary,
-                    modifier = Modifier
-                        .align(Alignment.BottomEnd)
-                        .navigationBarsPadding()
-                        .padding(bottom = 8.dp),
-                    onClick = {
-                        coroutineScope.launch {
-                            listState.scrollToItem(0)
-                        }
+            Box(Modifier.weight(1f)) {
+
+                val listState = rememberLazyListState()
+                ExploreList(exploreList, onItemClicked, listState = listState)
+                val showButton by remember {
+                    derivedStateOf {
+                        listState.firstVisibleItemIndex > 0
                     }
-                ) {
-                    Text("Up!")
+                }
+                if (showButton) {
+                    val coroutineScope = rememberCoroutineScope()
+                    FloatingActionButton(
+                        backgroundColor = MaterialTheme.colors.primary,
+                        modifier = Modifier
+                            .align(Alignment.BottomEnd)
+                            .navigationBarsPadding()
+                            .padding(bottom = 8.dp),
+                        onClick = {
+                            coroutineScope.launch {
+                                listState.scrollToItem(0)
+                            }
+                        }
+                    ) {
+                        Text("Up!")
+                    }
                 }
             }
         }
